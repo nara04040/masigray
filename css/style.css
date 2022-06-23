@@ -774,8 +774,93 @@ body {
   display: block;
 }
 
+.sns .inner {
+  padding: 50px;
+}
+
+.sns-top {
+  position: relative;
+  display: block;
+  text-align: center;
+}
+
+.sns-top h2 {
+  position: relative;
+  display: block;
+  font-size: 40px;
+  color: #000;
+  font-weight: 300;
+}
+
+.sns-top h2 b {
+  font-weight: 500;
+}
+
+.sns-top span {
+  position: relative;
+  display: block;
+  font-size: 20px;
+  color: #666;
+}
+
+@media all and (max-width:1000px) {
+  .sns-top h2 {
+    font-size: 30px;
+  }
+
+  .sns-top span {
+    font-size: 15px;
+  }
+}
+
 /* footer */
 .footer {
   position: relative;
   display: block;
+  background-color: #262626;
+  padding: 25px 0;
 }
+
+.footer .inner {
+  text-align: center;
+}
+
+.footer-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.footer-menu li {
+  position: relative;
+  display: block;
+  float: left;
+  padding: 0 21px;
+}
+
+.footer-menu li a {
+  position: relative;
+  display: block;
+
+  font-size: 16px;
+  line-height: 30px;
+  color: #9e9e9e;
+}
+
+.footer-logo {
+  position: relative;
+  /* img는 원래 inline */
+  display: inline-block;
+  margin-top: 25px;
+}
+
+.footer-copy {
+  position: relative;
+  display: inline-block;
+}
+
+.footer-sns {
+  position: relative;
+  display: inline-block;
+}
+
+.footer-sns li a {}
