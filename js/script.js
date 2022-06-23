@@ -1,5 +1,21 @@
 // html, css, js 로딩완료
-$(document).ready();
+$(document).ready(function () {
+    // 메인메뉴기능
+    let header = $('.header');
+    let header_top = $('.header-top');
+
+    // Scroll 기능
+    $(window).scroll(function () {
+        // scroll바 위치
+        let temp = $(window).scrollTop();
+        // .header-top 숨기기
+        if(temp > 0) {
+            header_top.addClass('header-top-close')
+        }else {
+            header_top.removeClass('header-top-close')
+        }
+    });
+});
 
 // html, css, js, 멀티미디어까지 로딩완료
 window.onload = function () {
