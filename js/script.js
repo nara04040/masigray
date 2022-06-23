@@ -3,15 +3,24 @@ $(document).ready(function () {
     // 메인메뉴기능
     let header = $('.header');
     let header_top = $('.header-top');
-
+    let header_main = $('.header-main')
+    let gnb = $('.gnb')
+    gnb.mouseenter(function(){
+        header_main.addClass('header-main-show')
+    })
+    gnb.mouseleave(function(){
+        header_main.removeClass('header-main-show')
+    })
     // Scroll 기능
     $(window).scroll(function () {
         // scroll바 위치
         let temp = $(window).scrollTop();
         // .header-top 숨기기
         if(temp > 0) {
+            header.addClass('header-fix')
             header_top.addClass('header-top-close')
         }else {
+            header.removeClass('header-fix')
             header_top.removeClass('header-top-close')
         }
     });
