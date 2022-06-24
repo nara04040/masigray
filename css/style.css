@@ -57,12 +57,27 @@ body {
   clear: both;
 }
 
+/* 위로가기 */
+.gotop {
+  position: fixed;
+  right: 20px;
+  bottom: 50px;
+  display: block;
+  width: 50px;
+  height: 50px;
+  background: url('../images/btn_top_off.png') no-repeat center;
+  background-size: cover;
+  border: 0;
+  cursor: pointer;
+  z-index: 999;
+}
+
 /* 모바일 메뉴 */
 .mb-bt {
   position: fixed;
   left: 20px;
   top: 30px;
-  display: block;
+  display: none;
   width: 22px;
   height: 21px;
   z-index: 99997;
@@ -105,7 +120,7 @@ body {
   position: fixed;
   left: 0;
   top: 0;
-  display: block;
+  display: none;
   z-index: 9998;
   width: 100vw;
   height: 100vh;
@@ -115,14 +130,21 @@ body {
 /* 모바일 메뉴내용 */
 .mb-wrap {
   position: fixed;
-  left: 0;
+  left: -320px;
   top: 0;
   display: block;
   z-index: 99999;
   width: 320px;
   height: 100vh;
   background-color: #fff;
+  transition: left 0.5s;
 }
+
+.mb-wrap-open {
+  left: 0;
+
+}
+
 .mb-close {
   position: absolute;
   right: 20px;
@@ -133,6 +155,7 @@ body {
   background: url('../images/btn_close2.png') no-repeat center;
   z-index: 9;
 }
+
 .mb-sns {
   position: relative;
   display: block;
@@ -187,8 +210,24 @@ body {
   width: 13px;
   height: 9px;
   background: url('../images/lnb_bl.png') no-repeat center;
+  transition: transform 0.5s;
 }
 
+.mb-icon-rot::after {
+  transform: translateY(-50%) rotate(180deg) !important;
+}
+
+/* 포커스유지 */
+.mb-menu-focus {
+  color: #4abbc3 !important;
+}
+
+/* .mb-menu > li:hover >a {
+  color: #4abbc3;
+}
+.mb-menu > li:hover .mb-submenu {
+  display: block;
+} */
 .mb-submenu {
   position: relative;
   display: none;
@@ -207,6 +246,10 @@ body {
   color: #888;
   line-height: 30px;
   padding-left: 40px;
+}
+
+.mb-menu-open>a {
+  color: #4abbc3;
 }
 
 /* 고정메뉴 */
@@ -434,6 +477,10 @@ body {
   .menu>li {
     padding: 0 15px;
   }
+
+  .mb-dim {
+    display: none;
+  }
 }
 
 @media all and (max-width: 700px) {
@@ -454,6 +501,10 @@ body {
 
   .gnb {
     display: none;
+  }
+
+  .mb-bt {
+    display: block;
   }
 }
 
@@ -615,7 +666,6 @@ body {
 }
 
 /* 슬라이드 넣기 */
-.items-box:nth-child(2) {}
 
 .sw-items {
   width: 100%;
@@ -751,7 +801,6 @@ body {
 }
 
 
-.items-box:nth-child(4) {}
 
 .search-left {
   position: relative;
